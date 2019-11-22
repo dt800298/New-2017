@@ -1,6 +1,7 @@
 package org.usfirst.frc.team548.robot;
 
-import com.ctre.CANTalon;
+import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.Solenoid;
 
@@ -12,18 +13,18 @@ public class Climber {
 		return instance;
 	}
 	
-	private static CANTalon climbTalon1, climbTalon2;
+	private static TalonSRX climbTalon1, climbTalon2;
 	private static Solenoid sol;
 	
 	private Climber() {
-		climbTalon1 = new CANTalon(Constants.CLIMB_TALONID_CLIMBTALON1);
-		climbTalon2 = new CANTalon(Constants.CLIMB_TALONID_CLIMBTALON2);
+		climbTalon1 = new TalonSRX(Constants.CLIMB_TALONID_CLIMBTALON1);
+		climbTalon2 = new TalonSRX(Constants.CLIMB_TALONID_CLIMBTALON2);
 		sol = new Solenoid(Constants.CLIMB_SOL_PORT);
 	}
 	
 	public static void setPower(double power) {
-		climbTalon1.set(power);
-		climbTalon2.set(-power);
+		climbTalon1.set(ControlMode.PercentOutput, power);
+		climbTalon2.set(ControlMode.PercentOutput, -power);
 	}///
 	
 	public static void setClimbOpen(boolean b) {

@@ -178,7 +178,7 @@ public class TeleOperated {
 		if (!gearArmOffsetPress && manip.getPOV() == 180) {
 			gearOffset -= 20;
 			gearArmOffsetPress = true;
-			
+
 		} else if (!gearArmOffsetPress && manip.getPOV() == 0) {
 			gearOffset += 20;
 			gearArmOffsetPress = true;

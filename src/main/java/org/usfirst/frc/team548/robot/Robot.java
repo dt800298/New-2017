@@ -49,7 +49,7 @@ public class Robot extends IterativeRobot {
 		austinChooser.addObject("shoot only", new OnlyShoot());
 		
 		SmartDashboard.putData("AUTO MODE", austinChooser);
-		GearIngestor.setArmOffSet();
+		/*GearIngestor.setArmOffSet();*/
 		USBLED.getInstance();
 	}
 
@@ -85,7 +85,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void testPeriodic() {
-		System.out.println(GearIngestor.getArmPos() + " "+GearIngestor.getAbsPos()+ " "+GearIngestor.isEncConnected());
+		System.out.println(GearIngestor.getArmPos() + " "/*+GearIngestor.getAbsPos()+*/+ " "/*+GearIngestor.isEncConnected()*/);
 		if (TeleOperated.driver.getAButton()) {
 			GearIngestor.setArmPos(Constants.GEARING_MIN);
 		}  else if(TeleOperated.driver.getBButton()) {
