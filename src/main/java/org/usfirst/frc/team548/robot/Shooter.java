@@ -14,6 +14,7 @@ private static Shooter instance;
 	}
 	
 	private static TalonSRX talonLeft, talonRight, elvevator, conv;
+
 	
 	private Shooter() {
 		talonLeft = new TalonSRX(Constants.SHOOT_TALONID_TALONLEFT); //Encoder
@@ -58,7 +59,7 @@ private static Shooter instance;
 	
 	public static void injectAfterSpeed(double speed) {
 		setShooterSpeed(speed);
-		if(Math.abs((int)(speed-getSpeed())) < 50){
+		if(Math.abs((int)(speed-getSpeed())) < .5){
 			setElevator(1);
 		} else {
 			setElevator(0);
@@ -70,4 +71,6 @@ private static Shooter instance;
 
 		talonLeft.config_kF(0, Constants.SHOOT_PID_F+a);
 	}
+	
 }
+

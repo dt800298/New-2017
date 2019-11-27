@@ -1,6 +1,6 @@
 package org.usfirst.frc.team548.robot;
 
-import org.usfirst.frc.team548.robot.AutoModes.*;
+//import org.usfirst.frc.team548.robot.AutoModes.*;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
@@ -11,8 +11,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
 	
-	AutoMode autonCommand;
-	SendableChooser<AutoMode> austinChooser;
+	//AutoMode autonCommand;
+	//SendableChooser<AutoMode> austinChooser;
 	
 	public static PowerDistributionPanel PDP;
 	/**
@@ -27,8 +27,10 @@ public class Robot extends IterativeRobot {
 		GearIngestor.getInstance();
 		TeleOperated.getInstance();
 		PDP = new PowerDistributionPanel();
+
 		
-		austinChooser = new SendableChooser<AutoMode>();
+		
+		/*austinChooser = new SendableChooser<AutoMode>();
 		austinChooser.addDefault("Middle Gear", new MiddleGear());
 		austinChooser.addObject("Red Side Gear no driving", new SideGear(true));
 		austinChooser.addObject("Blue Side Gear  no driving", new SideGear(false));
@@ -57,7 +59,7 @@ public class Robot extends IterativeRobot {
 	//true is red, false is blue
 	@Override
 	public void autonomousInit() {
-		austinChooser.getSelected().start();
+		//austinChooser.getSelected().start();
 	}
 
 	/**

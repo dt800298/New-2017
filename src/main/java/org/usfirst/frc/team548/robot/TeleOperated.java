@@ -174,6 +174,7 @@ public class TeleOperated {
 		else {
 			Shooter.stop();
 		}
+		
 
 		if (!gearArmOffsetPress && manip.getPOV() == 180) {
 			gearOffset -= 20;
@@ -199,7 +200,7 @@ public class TeleOperated {
 		if (driver.getAButton())
 			DriveTrain.restHyro();
 		SmartDashboard.putNumber("Hyro", DriveTrain.getAngle());
-		SmartDashboard.putNumber("Speed", Shooter.getSpeed());
+		//SmartDashboard.putNumber("Speed", Shooter.getSpeed());
 	}
 
 	public static void init() {

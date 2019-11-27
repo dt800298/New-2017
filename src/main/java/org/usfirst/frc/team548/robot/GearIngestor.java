@@ -30,9 +30,9 @@ public class GearIngestor {
 
 	
 		//arm.reverseOutput(true);
-		arm.config_kP(0, 1, 0);
+		/*arm.config_kP(0, 1, 0);
 		arm.config_kI(0, .0001, 0);
-		arm.config_kD(0, 0, 0);
+		arm.config_kD(0, 0, 0);*/
 
 	
 
