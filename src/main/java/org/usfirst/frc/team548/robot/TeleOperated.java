@@ -39,7 +39,7 @@ public class TeleOperated {
 
 		// change codde here
 
-		if (driver.getAButton()) {
+		/*if (driver.getAButton()) {
 			if (wiggle < 4) {
 				DriveTrain.drive(-Constants.DT_WIGGLE_POWER, -Constants.DT_WIGGLE_POWER);
 			} else if (wiggle >= 4) {
@@ -58,16 +58,16 @@ public class TeleOperated {
 			}
 			DriveTrain.moveDistance(.14, .12, 0);
 
-		} else {
+		} */
 			dPressed = false;
-			DriveTrain.arcadeDrice(driver.getRightStickYAxis(), Utils.negPowTwo(driver.getLeftStickXAxis()));
-		}
+			DriveTrain.arcadeDrice(.14*driver.getRightStickYAxis(), .14*Utils.negPowTwo(driver.getLeftStickXAxis()));
+		
 		if (DriverStation.getInstance().isBrownedOut())
 			driver.setRightRumble(1);
 		else
 			driver.setRightRumble(0);
 
-		DriveTrain.shiftHigh(driver.getRightBumper());
+		//DriveTrain.shiftHigh(driver.getRightBumper());
 
 		/**
 		 * Manip
