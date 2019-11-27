@@ -26,7 +26,7 @@ public class Constants {
 	public static final int SHOOT_TALONID_TALONLEFT= 14;
 	public static final int SHOOT_TALONID_TALONELEVATOR = 13;
 	public static final int SHOOT_TALONID_TALONCONVA = 16;
-	public static final int SHOOT_AUTON_SPEED = 3050;//4270
+	public static final double SHOOT_AUTON_SPEED = .3;//4270
 	public static final int SHOOT_MIDDLE_AUTON_SPEED = 3850;
 	public static final int SHOOT_FAR_SIDE_AUTON_SPEED = 2000;//
 	public static final int SHOOT_CLOSE_SIDE_AUTON_SPEED= 3333;

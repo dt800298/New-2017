@@ -8,9 +8,10 @@ public class TeleOperated {
 
 	private static TeleOperated instance;
 	private static Timer timer;
+	private static Timer shoot;
 	private static int wiggle = 0;
 	private static boolean yPressed = false, dPressed = false, timerStart = false, povPressed = false,
-			gearArmOffsetPress = false;
+			gearArmOffsetPress = false, shootStart = false;
 
 	public static XBoxController driver;
 	public static XBoxController manip;
@@ -26,6 +27,7 @@ public class TeleOperated {
 		driver = new XBoxController(Constants.XB_POS_DRIVER);
 		manip = new XBoxController(Constants.XB_POS_MANIP);
 		timer = new Timer();
+		shoot = new Timer();
 	}
 
 	public static void run() {
@@ -72,6 +74,9 @@ public class TeleOperated {
 		 */
 		
 		
+		/*
+		
+		
 		if (Math.abs(manip.getRightStickYAxis()) > .2)
 			Climber.setPower(-Math.abs(manip.getRightStickYAxis()));
 		else
@@ -106,7 +111,7 @@ public class TeleOperated {
 			}
 
 			// ARM
-			if (Math.abs(manip.getLeftStickYAxis()) > .2) {
+			/*if (Math.abs(manip.getLeftStickYAxis()) > .2) {
 				GearIngestor.setArmPower(-manip.getLeftStickYAxis() * .3);
 			} else if (manip.getYButton()) {
 				GearIngestor.setArmPos(Constants.GEARING_MAX - 200);
@@ -159,13 +164,24 @@ public class TeleOperated {
 			Climber.setClimbOpen(true);
 		} else if (manip.getPOV() == 270) {
 			Climber.setClimbOpen(false);
-		}
+		}*/
 
 		if (manip.getBackButton())
 			gearOffset = 0;
 
 		if (manip.getLeftTriggerButton()) {
-			Shooter.injectAfterSpeed(Constants.SHOOT_AUTON_SPEED);
+			if(!shootStart){
+				shootStart=true;
+				shoot.reset();
+				shoot.start();
+
+			}
+			if(shoot.get()>.8){
+				Shooter.inject(Constants.SHOOT_AUTON_SPEED);
+			}
+			else{
+				Shooter.sped(Constants.SHOOT_AUTON_SPEED);
+			}
 		} else if (manip.getLeftBumper()) {
 			Shooter.setConvPower(-.5);
 			Shooter.setElevator(-.7);
@@ -174,8 +190,13 @@ public class TeleOperated {
 		else {
 			Shooter.stop();
 		}
+		if(!manip.getLeftTriggerButton()){
+			shootStart=false;
+			shoot.stop();
+		}
 		
 
+		/*
 		if (!gearArmOffsetPress && manip.getPOV() == 180) {
 			gearOffset -= 20;
 			gearArmOffsetPress = true;
@@ -185,7 +206,7 @@ public class TeleOperated {
 			gearArmOffsetPress = true;
 		} else {
 			gearArmOffsetPress = false;
-		}
+		}*/
 
 		/**
 		 * LEDS

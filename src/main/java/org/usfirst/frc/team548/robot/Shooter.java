@@ -57,7 +57,7 @@ private static Shooter instance;
 		return talonLeft.getSelectedSensorVelocity();
 	}
 	
-	public static void injectAfterSpeed(double speed) {
+	/*public static void injectAfterSpeed(double speed) {
 		setShooterSpeed(speed);
 		if(Math.abs((int)(speed-getSpeed())) < .5){
 			setElevator(1);
@@ -65,6 +65,17 @@ private static Shooter instance;
 			setElevator(0);
 			setConvPower(.7);
 		}
+	}*/
+	public static void inject(double speed){
+		setShooterSpeed(speed);
+		setElevator(1);
+		setConvPower(.7);
+	}
+
+	public static void sped(double speed){
+		setShooterSpeed(speed);
+		setElevator(0);
+		setConvPower(.7);
 	}
 	
 	public static void addF(double a){
