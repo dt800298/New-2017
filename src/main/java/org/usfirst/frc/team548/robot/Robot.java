@@ -80,6 +80,18 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		TeleOperated.run();
 		SmartDashboard.putNumber("Arm pos", GearIngestor.getArmPos());
+		SmartDashboard.putNumber("Left Back Temp", DriveTrain.getLeftBackMotor());
+		SmartDashboard.putNumber("Right Back Temp", DriveTrain.getRightBackMotor());
+		SmartDashboard.putNumber("Left Front Temp", DriveTrain.getLeftFrontMotor());
+		SmartDashboard.putNumber("Right Front Temp", DriveTrain.getRightFrontMotor());
+		SmartDashboard.putNumber("Left Back Current", DriveTrain.getLeftBackMotorC());
+		SmartDashboard.putNumber("Right Back Current", DriveTrain.getRightBackMotorC());
+		SmartDashboard.putNumber("Left Front Current", DriveTrain.getLeftFrontMotorC());
+		SmartDashboard.putNumber("Right Front Current", DriveTrain.getRightFrontMotorC());
+		SmartDashboard.putNumber("Left Back Voltage", DriveTrain.getLeftBackMotorV());
+		SmartDashboard.putNumber("Left Front Voltage", DriveTrain.getLeftFrontMotorV());
+		SmartDashboard.putNumber("Right Back Voltage", DriveTrain.getRightBackMotorV());
+		SmartDashboard.putNumber("Right Front Voltage", DriveTrain.getRightFrontMotorV());
 	}
 
 	/**

@@ -60,7 +60,7 @@ public class TeleOperated {
 
 		} */
 			dPressed = false;
-			DriveTrain.arcadeDrice(.14*driver.getRightStickYAxis(), .14*Utils.negPowTwo(driver.getLeftStickXAxis()));
+			DriveTrain.arcadeDrice(.5*driver.getRightStickYAxis(), .5*Utils.negPowTwo(driver.getLeftStickXAxis()));
 		
 		if (DriverStation.getInstance().isBrownedOut())
 			driver.setRightRumble(1);

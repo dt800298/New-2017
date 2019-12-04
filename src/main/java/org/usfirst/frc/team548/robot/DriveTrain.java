@@ -123,6 +123,56 @@ public class DriveTrain implements PIDOutput {
 		return rightMini.getSelectedSensorPosition();
 	}
 
+	public static double getLeftBackMotor() {
+		return leftBack.getTemperature();
+	}
+
+	public static double getRightBackMotor() {
+		return rightBack.getTemperature();
+	}
+	
+	public static double getLeftFrontMotor() {
+		return leftFront.getTemperature();
+	}
+	
+	public static double getRightFrontMotor() {
+		return rightFront.getTemperature();
+	}
+
+	public static double getRightFrontMotorC() {
+		return rightFront.getOutputCurrent();
+	}
+
+	public static double getLeftFrontMotorC() {
+		return leftFront.getOutputCurrent();
+	}
+
+	public static double getRightBackMotorC() {
+		return rightBack.getOutputCurrent();
+	}
+
+	public static double getLeftBackMotorC() {
+		return leftBack.getOutputCurrent();
+	}
+
+	public static double getRightFrontMotorV() {
+		return rightFront.getMotorOutputVoltage();
+	}
+
+	public static double getLeftFrontMotorV() {
+		return leftFront.getMotorOutputVoltage();
+	}
+	public static double getRightBackMotorV() {
+		return rightBack.getMotorOutputVoltage();
+	}
+	public static double getLeftBackMotorV() {
+		return leftBack.getMotorOutputVoltage();
+	}
+
+
+
+
+
 	public static double getLeftEncoderDistance() {
 		return -leftFront.getSelectedSensorPosition();
 	}
